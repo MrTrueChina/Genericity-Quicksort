@@ -7,6 +7,9 @@ import java.util.function.BiFunction;
  *
  */
 public class Quicksort {
+    private Quicksort() {
+    }
+
     /**
      * 对一个数组以指定的排序标准进行排序
      * 
