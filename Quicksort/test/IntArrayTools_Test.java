@@ -1,11 +1,7 @@
-package extra.tools.test;
-
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.jupiter.api.Test;
-
-import extra.tools.IntArrayQuickSort;
 
 class IntArrayTools_Test {
     @Test
@@ -54,12 +50,12 @@ class IntArrayTools_Test {
     void quickSort_Null() {
         try {
             IntArrayQuickSort.sort(null);
-            fail(); // Ã»½ÓÊÕµ½Òì³£ËµÃ÷³öbugÁË
+            fail(); // æ²¡æ¥æ”¶åˆ°å¼‚å¸¸è¯´æ˜å‡ºbugäº†
         } catch (NullPointerException e) {
-            if (e.getMessage() != "ÅÅĞòÊı×é²»ÄÜÎª¿Õ")
+            if (e.getMessage() != "æ’åºæ•°ç»„ä¸èƒ½ä¸ºç©º")
                 fail();
         } catch (Exception e) {
-            fail(); // Èç¹û½ÓÊÕµ½ÆäËûÒì³£ÔòËµÃ÷³öbugÁË
+            fail(); // å¦‚æœæ¥æ”¶åˆ°å…¶ä»–å¼‚å¸¸åˆ™è¯´æ˜å‡ºbugäº†
         }
     }
 }
