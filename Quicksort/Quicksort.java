@@ -1,27 +1,25 @@
-package extra.tools;
-
 import java.util.function.BiFunction;
 
 /**
- * ¿ìËÙÅÅĞòÀà
+ * å¿«é€Ÿæ’åºç±»
  * 
  * @author Mr.true.China
  *
  */
 public class Quicksort {
     /**
-     * ¶ÔÒ»¸öÊı×éÒÔÖ¸¶¨µÄÅÅĞò±ê×¼½øĞĞÅÅĞò
+     * å¯¹ä¸€ä¸ªæ•°ç»„ä»¥æŒ‡å®šçš„æ’åºæ ‡å‡†è¿›è¡Œæ’åº
      * 
-     * @param originArray ÒªÅÅĞòµÄÊı×é
-     * @param isLeft      ÅÅĞò±ê×¼£¬Çë°´ÕÕÒÔÏÂ±ê×¼±à¼­£º´«ÈëÁ½¸öÔªËØ£¬Èç¹ûµÚÒ»¸öÔªËØ±ÈµÚ¶ş¸öÔªËØ¸ü¿¿Ç°£¬Ôò·µ»Øtrue£¬·ñÔò·µ»Øfalse
-     * @return ÅÅĞòºóµÄÊı×é
-     * @throws NullPointerException µ±´«ÈëµÄÊı×é»òÅÅĞò±ê×¼ÎªnullÊ±Å×³ö´ËÒì³£
+     * @param originArray è¦æ’åºçš„æ•°ç»„
+     * @param isLeft      æ’åºæ ‡å‡†ï¼Œè¯·æŒ‰ç…§ä»¥ä¸‹æ ‡å‡†ç¼–è¾‘ï¼šä¼ å…¥ä¸¤ä¸ªå…ƒç´ ï¼Œå¦‚æœç¬¬ä¸€ä¸ªå…ƒç´ æ¯”ç¬¬äºŒä¸ªå…ƒç´ æ›´é å‰ï¼Œåˆ™è¿”å›trueï¼Œå¦åˆ™è¿”å›false
+     * @return æ’åºåçš„æ•°ç»„
+     * @throws NullPointerException å½“ä¼ å…¥çš„æ•°ç»„æˆ–æ’åºæ ‡å‡†ä¸ºnullæ—¶æŠ›å‡ºæ­¤å¼‚å¸¸
      */
     public static <E> E[] sort(final E[] array, final BiFunction<E, E, Boolean> isLeft) throws NullPointerException {
         if (array == null)
-            throw new NullPointerException("ÒªÅÅĞòµÄÊı×é²»ÄÜÎªnull");
+            throw new NullPointerException("è¦æ’åºçš„æ•°ç»„ä¸èƒ½ä¸ºnull");
         if (isLeft == null)
-            throw new NullPointerException("ÅÅĞò±ê×¼²»ÄÜÎªnull");
+            throw new NullPointerException("æ’åºæ ‡å‡†ä¸èƒ½ä¸ºnull");
 
         sort(array, 0, array.length - 1, isLeft);
         return array;
