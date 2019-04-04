@@ -1,4 +1,7 @@
 public class IntArrayQuickSort {
+    private IntArrayQuickSort() {
+    }
+
     /**
      * 对int数组进行从小到大排序
      * 
