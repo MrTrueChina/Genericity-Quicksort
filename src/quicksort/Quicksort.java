@@ -1,9 +1,11 @@
+package quicksort;
 import java.util.function.BiFunction;
 
 /**
  * 快速排序类
  * 
  * @author Mr.true.China
+ * @date 2019-4-8
  *
  */
 public class Quicksort {

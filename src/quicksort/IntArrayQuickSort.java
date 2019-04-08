@@ -1,3 +1,4 @@
+package quicksort;
 public class IntArrayQuickSort {
     private IntArrayQuickSort() {
     }

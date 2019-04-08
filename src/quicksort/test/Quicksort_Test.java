@@ -1,15 +1,20 @@
+package quicksort.test;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.fail;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.function.BiFunction;
 
+import org.junit.jupiter.api.Test;
+
+import quicksort.Quicksort;
+
 /**
- * ç”¨äºæµ‹è¯•Quicksortç±»çš„JUnitæµ‹è¯•ç±»
+ * ÓÃÓÚ²âÊÔQuicksortÀàµÄJUnit²âÊÔÀà
+ * 
  * @author Mr.true.China
  */
-public class Quicksort_Test {
+class Quicksort_Test {
     @Test
     public void sort_NoDuplicate() {
         Integer[] origin = new Integer[] { 1, 5, 6, 9, 8, 7, 4, 3, 2 };
@@ -51,6 +56,14 @@ public class Quicksort_Test {
     }
 
     @Test
+    public void sort_Two() {
+        Integer[] origin = new Integer[] { 2, 1 };
+        Integer[] expected = new Integer[] { 1, 2 };
+        BiFunction<Integer, Integer, Boolean> left = (a, b) -> a < b;
+        assertArrayEquals(expected, Quicksort.sort(origin, left));
+    }
+
+    @Test
     public void sort_void() {
         Integer[] origin = new Integer[0];
         Integer[] expected = new Integer[0];
@@ -65,7 +78,7 @@ public class Quicksort_Test {
             Quicksort.sort(null, isLeft);
             fail();
         } catch (NullPointerException e) {
-            if (e.getMessage() != "è¦æ’åºçš„æ•°ç»„ä¸èƒ½ä¸ºnull")
+            if (e.getMessage() != "ÒªÅÅĞòµÄÊı×é²»ÄÜÎªnull")
                 fail();
         } catch (Exception e) {
             fail();
@@ -78,7 +91,7 @@ public class Quicksort_Test {
             Quicksort.sort(new Integer[0], null);
             fail();
         } catch (NullPointerException e) {
-            if (e.getMessage() != "æ’åºæ ‡å‡†ä¸èƒ½ä¸ºnull")
+            if (e.getMessage() != "ÅÅĞò±ê×¼²»ÄÜÎªnull")
                 fail();
         } catch (Exception e) {
             fail();
@@ -87,10 +100,10 @@ public class Quicksort_Test {
 
     @Test
     public void sort_Object_MainID() {
-        Person[] persons = new Person[] { new Person(1, 5, "ä¸€å·-1-5"), new Person(2, 3, "äºŒå·-2-3"),
-                new Person(3, 6, "ä¸‰å·-3-6"), new Person(4, 9, "å››å·-4-9"), new Person(5, 2, "äº”å·-5-2"),
-                new Person(6, 7, "å…­å·-6-7"), new Person(7, 1, "ä¸ƒå·-7-1"), new Person(8, 4, "å…«å·-8-4"),
-                new Person(9, 8, "ä¹å·-9-8") };
+        Person[] persons = new Person[] { new Person(1, 5, "Ò»ºÅ-1-5"), new Person(2, 3, "¶şºÅ-2-3"),
+                new Person(3, 6, "ÈıºÅ-3-6"), new Person(4, 9, "ËÄºÅ-4-9"), new Person(5, 2, "ÎåºÅ-5-2"),
+                new Person(6, 7, "ÁùºÅ-6-7"), new Person(7, 1, "ÆßºÅ-7-1"), new Person(8, 4, "°ËºÅ-8-4"),
+                new Person(9, 8, "¾ÅºÅ-9-8") };
         Person[] origin = new Person[] { persons[2], persons[5], persons[6], persons[4], persons[0], persons[7],
                 persons[8], persons[3], persons[1] };
         Person[] expected = new Person[] { persons[0], persons[1], persons[2], persons[3], persons[4], persons[5],
@@ -101,10 +114,10 @@ public class Quicksort_Test {
 
     @Test
     public void sort_Object_SecondID() {
-        Person[] persons = new Person[] { new Person(1, 5, "ä¸€å·-1-5"), new Person(2, 3, "äºŒå·-2-3"),
-                new Person(3, 6, "ä¸‰å·-3-6"), new Person(4, 9, "å››å·-4-9"), new Person(5, 2, "äº”å·-5-2"),
-                new Person(6, 7, "å…­å·-6-7"), new Person(7, 1, "ä¸ƒå·-7-1"), new Person(8, 4, "å…«å·-8-4"),
-                new Person(9, 8, "ä¹å·-9-8") };
+        Person[] persons = new Person[] { new Person(1, 5, "Ò»ºÅ-1-5"), new Person(2, 3, "¶şºÅ-2-3"),
+                new Person(3, 6, "ÈıºÅ-3-6"), new Person(4, 9, "ËÄºÅ-4-9"), new Person(5, 2, "ÎåºÅ-5-2"),
+                new Person(6, 7, "ÁùºÅ-6-7"), new Person(7, 1, "ÆßºÅ-7-1"), new Person(8, 4, "°ËºÅ-8-4"),
+                new Person(9, 8, "¾ÅºÅ-9-8") };
         Person[] origin = new Person[] { persons[2], persons[5], persons[6], persons[4], persons[0], persons[7],
                 persons[8], persons[3], persons[1] };
         Person[] expected = new Person[] { persons[6], persons[4], persons[1], persons[7], persons[0], persons[2],
@@ -115,10 +128,10 @@ public class Quicksort_Test {
 
     @Test
     public void sort_Object_SuperAndChild() {
-        Person[] persons = new Person[] { new Person(1, 5, "ä¸€å·-1-5"), new Student(2, 3, 87, "äºŒå·-2-3"),
-                new Person(3, 6, "ä¸‰å·-3-6"), new Student(4, 9, 36, "å››å·-4-9"), new Person(5, 2, "äº”å·-5-2"),
-                new Student(6, 7, 25, "å…­å·-6-7"), new Student(7, 1, 99, "ä¸ƒå·-7-1"), new Person(8, 4, "å…«å·-8-4"),
-                new Person(9, 8, "ä¹å·-9-8") };
+        Person[] persons = new Person[] { new Person(1, 5, "Ò»ºÅ-1-5"), new Student(2, 3, 87, "¶şºÅ-2-3"),
+                new Person(3, 6, "ÈıºÅ-3-6"), new Student(4, 9, 36, "ËÄºÅ-4-9"), new Person(5, 2, "ÎåºÅ-5-2"),
+                new Student(6, 7, 25, "ÁùºÅ-6-7"), new Student(7, 1, 99, "ÆßºÅ-7-1"), new Person(8, 4, "°ËºÅ-8-4"),
+                new Person(9, 8, "¾ÅºÅ-9-8") };
         Person[] origin = new Person[] { persons[2], persons[5], persons[6], persons[4], persons[0], persons[7],
                 persons[8], persons[3], persons[1] };
         Person[] expected = new Person[] { persons[0], persons[1], persons[2], persons[3], persons[4], persons[5],
@@ -128,7 +141,7 @@ public class Quicksort_Test {
     }
 
     /**
-     * ç”¨äºæµ‹è¯•è‡ªå®šä¹‰å¯¹è±¡æ•°ç»„æ’åºçš„è‡ªå®šä¹‰ç±»ï¼Œæœ‰ä¸¤ä¸ªç”¨äºåˆ¤æ–­é¡ºåºçš„intå’Œä¸€ä¸ªæ— å…³çš„String
+     * ÓÃÓÚ²âÊÔ×Ô¶¨Òå¶ÔÏóÊı×éÅÅĞòµÄ×Ô¶¨ÒåÀà£¬ÓĞÁ½¸öÓÃÓÚÅĞ¶ÏË³ĞòµÄintºÍÒ»¸öÎŞ¹ØµÄString
      * 
      * @author Mr.true.China
      *
@@ -158,7 +171,7 @@ public class Quicksort_Test {
     }
 
     /**
-     * ç”¨äºæµ‹è¯•å¤šæ€æ•°ç»„çš„å­ç±»ï¼Œå¢åŠ äº†ä¸€ä¸ªintï¼Œåœ¨å¤šæ€æµ‹è¯•ä¸­è¿™ä¸ªintä¸ä½œä¸ºæ’åºæ ‡å‡†
+     * ÓÃÓÚ²âÊÔ¶àÌ¬Êı×éµÄ×ÓÀà£¬Ôö¼ÓÁËÒ»¸öint£¬ÔÚ¶àÌ¬²âÊÔÖĞÕâ¸öint²»×÷ÎªÅÅĞò±ê×¼
      * 
      * @author Mr.true.China
      *
