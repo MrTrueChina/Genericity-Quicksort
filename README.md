@@ -2,7 +2,7 @@
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 
-## 先来点感慨
+## 先来点感慨：
 快速排序是一个令很多程序员沉迷其中无法自拔然后淹死的排序算法，而我这条咸鱼怎么会轻易地被淹死？在我四次研究后终于参透了快速排序的原理，于是将它写下来，传到Gayhub上，妄图骗到几个星。
 
 <br/>
