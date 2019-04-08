@@ -1,20 +1,24 @@
 # 快速排序的实现和解释以及泛型支持
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
+## 先来点感慨
 快速排序是一个令很多程序员沉迷其中无法自拔然后淹死的排序算法，而我这条咸鱼怎么会轻易地被淹死？在我四次研究后终于参透了快速排序的原理，于是将它写下来，传到Gayhub上，妄图骗到几个星。
 
 <br/>
 
-### 文件夹内容：
+## 文件夹内容：
 | 文件夹 | 内容 |
 | ------------- |:-------------| 
-| Quicksort | 快速排序的所有代码 |
-| Quicksort/IntArrayQuickSort.java | int数组的快速排序的代码 |
-| Quicksort/Quicksort.java.java | 支持泛型的快速排序的代码 |
-| Quicksort/test/IntArrayQuickSort_Test.java | IntArrayQuickSort的JUnit测试代码 |
-| Quicksort/test/IntArrayQuickSort_Test.java | Quicksort的JUnit测试代码 |
+| src/quicksort | 快速排序的所有代码 |
+| src/quicksort/IntArrayQuickSort.java | int数组的快速排序的代码 |
+| src/quicksort/Quicksort.java.java | 支持泛型的快速排序的代码 |
+| src/quicksort/test/IntArrayQuickSort_Test.java | IntArrayQuickSort的JUnit测试代码 |
+| src/quicksort/test/IntArrayQuickSort_Test.java | Quicksort的JUnit测试代码 |
 
 <br/>
 
-### 原理解释：
+## 原理解释：
 
 快排比常见的简单的排序算法拥有更多的临时变量、更多的行进方向、更多的递归，这使得快排用语言表达非常困难，这也是为什么解释快排的文章这么多但同样让人看不懂。<br/>
 这次我要用图文的方式来解释快排：
